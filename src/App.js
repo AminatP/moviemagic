@@ -1,23 +1,38 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react'
+import Search from './components/ui/Search'
+import Header from './components/ui/Header'
+import MoviesGrid from './components/movies/MoviesGrid'
+
 import './App.css';
 
-function App() {
+const  App = () => {
+  const [ movies, setMovies ] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
+  const [searchValue, setSearchValue] = useState('')
+
+	useEffect(() => {
+		const fetchMovies = async () => {
+      setIsLoading(true)
+
+      const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=e955dc1a`;
+      const response = await fetch(url);
+      const responseJson = await response.json();
+
+      if (responseJson.Search) setMovies(responseJson.Search);
+      setIsLoading(false)
+    };
+    fetchMovies()
+	}, [searchValue]);
+
+  console.log("this is movies", movies)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Header />
+      <Search  getQuery={(q) => setSearchValue(q)}/>
+      <MoviesGrid  isLoading={isLoading} movies={movies}/>
+      {/* {movies.map((movie) => (
+        <div>{movie.Title}</div>
+      ))} */}
     </div>
   );
 }
