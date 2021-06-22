@@ -1,14 +1,15 @@
 import React from 'react'
-import MovieItem from './MovieItem'
-import Spinner from '../ui/Spinner'
+import { img_300, unavailable } from './imageConfig'
 
 const MoviesGrid = ({movies, isLoading}) => {
   return isLoading ? (
-    <Spinner/>
+   <div></div>
   ) : (
     <section className='cards'>
       {movies.map((movie) => (
-        <MovieItem key={movie.id} movie={movie}></MovieItem>
+        <div className='card'>
+        <img src={movie.poster_path ? `${img_300}${movie.poster_path}` : unavailable}/>
+        </div>
       ))}
   </section>
   )

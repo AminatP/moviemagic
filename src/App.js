@@ -1,41 +1,23 @@
-import React, { useState, useEffect } from 'react'
-import Search from './components/ui/Search'
-import Header from './components/ui/Header'
-import axios from 'axios'
-import MoviesGrid from './components/movies/MoviesGrid'
+import React from 'react'
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Header from './components/Header'
+import Footer from './components/Footer'
 
-import './App.css';
+import Movies from './components/Movies'
+import MovieItem from './components/movies/MovieItem'
 
-const  App = () => {
-  const [ movies, setMovies ] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
-  const [searchValue, setSearchValue] = useState('')
+import './App.css'
 
-  useEffect(() => {
-		const fetchMovies = async () => {
-      setIsLoading(true)
-
-      const url = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&query=${searchValue}`;
-
-      const response = await axios.get(url);
-      setMovies(response.data.results)
-      setIsLoading(false)
-
-      console.log("this is movies", movies)
-    };
-    fetchMovies()
-  }, [searchValue]);
-
+const App = () => {
   return (
-    <div className="container">
+    <BrowserRouter>
       <Header />
-      <Search  getQuery={(q) => setSearchValue(q)}/>
-      <MoviesGrid  isLoading={isLoading} movies={movies}/>
-      {/* {movies.map((movie) => (
-        <div>{movie.title}</div>
-      ))} */}
-    </div>
+      <Switch>
+        <Route exact path="/" component={Movies} />
+        <Route exact path="movie/:id" component={MovieItem} />
+      </Switch>
+      <Footer />
+    </BrowserRouter>
   );
 }
-
 export default App;

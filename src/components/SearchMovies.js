@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Search = ({ getQuery}) => {
+const SearchMovies = ({ getQuery}) => {
   const [text, setText] = useState('')
 
   const onChange = (q) => {
@@ -24,4 +24,4 @@ const Search = ({ getQuery}) => {
   )
 }
 
-export default Search
+export default SearchMovies
