@@ -9,7 +9,7 @@ const MoviesGrid = ({movies, isLoading}) => {
   ) : (
     <section className='cards'>
       {movies.map((movie) => (
-        <div className='card'>
+        <div className='card' key={movie.id}>
           <Link to={`/${movie.id}`}>
             <img src={movie.poster_path ? `${img_300}${movie.poster_path}` : unavailable}/>
             {/* <SingleMovie movie={movie}/> */}
