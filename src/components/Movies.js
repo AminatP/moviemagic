@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import SearchMovies from './SearchMovies'
 import axios from 'axios'
-import MoviesGrid from './movies/MoviesGrid'
+import MoviesGrid from './MoviesGrid'
 import '../App.css';
 
 const  Movies = () => {
@@ -18,18 +17,33 @@ const  Movies = () => {
       const response = await axios.get(url);
       setMovies(response.data.results)
       setIsLoading(false)
-
-      console.log("this is movies", movies)
     };
     fetchMovies()
   }, [searchValue]);
 
+  const onChange = (q) => {
+    setSearchValue(q)
+  }
+
+    console.log("this is search value", searchValue)
   return (
     <div className="container">
-      <SearchMovies  getQuery={(q) => setSearchValue(q)}/>
+      <section className='search'>
+        <form>
+          <input
+            type='text'
+            className='form-control'
+            placeholder='Search for a movie title...'
+            value={searchValue}
+            onChange={(e) => onChange(e.target.value)}
+            autoFocus
+          />
+        </form>
+      </section>
       <MoviesGrid  isLoading={isLoading} movies={movies}/>
     </div>
   );
 }
 
 export default Movies;
+

@@ -1,5 +1,7 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import { img_300, unavailable } from './imageConfig'
+// import SingleMovie from './SingleMovie'
 
 const MoviesGrid = ({movies, isLoading}) => {
   return isLoading ? (
@@ -8,7 +10,10 @@ const MoviesGrid = ({movies, isLoading}) => {
     <section className='cards'>
       {movies.map((movie) => (
         <div className='card'>
-        <img src={movie.poster_path ? `${img_300}${movie.poster_path}` : unavailable}/>
+          <Link to={`/${movie.id}`}>
+            <img src={movie.poster_path ? `${img_300}${movie.poster_path}` : unavailable}/>
+            {/* <SingleMovie movie={movie}/> */}
+          </Link>
         </div>
       ))}
   </section>
