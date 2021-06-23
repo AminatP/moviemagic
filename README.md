@@ -4,6 +4,7 @@ Movie Magic is a small web application that allows a user to search for a movie 
 
 ![](src/images/mm.png)
 
+![](src/images/movie.png)
 ## Tech Stack
 
 JavaScript, React(React Hooks were used), HTML, CSS
