@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { img_300, unavailable } from './imageConfig'
 import Rating from './Rating'
-import up from '../images/up.jpg'
-import down from '../images/down.jpg'
+import up from '../images/up.png'
+import down from '../images/down.png'
 import axios from 'axios'
 import '../App.css';
 
