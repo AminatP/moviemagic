@@ -6,12 +6,20 @@ import '../App.css';
 
 const SingleMovie = (props) => {
   let urlPath = parseInt(props.match.params.id)
-  const scoreUpFromStorage = Number(window.localStorage.getItem('goodRating'))
-  const scoreDownFromStorage = Number(window.localStorage.getItem('badRating'))
+  let good = 0
+  let bad = 0
+  const localData = localStorage.getItem(urlPath)
+
+  if(localData){
+    const info = JSON.parse(localData)
+      good = info.goodRating
+      bad = info.badRating
+  }
 
   const [ movie, setMovie ] = useState({})
-  const [ scoreUp , setScoreUp ] = useState(scoreUpFromStorage)
-  const [ scoreDown , setScoreDown ] = useState(scoreDownFromStorage)
+  const [ scoreUp , setScoreUp ] = useState(good)
+  const [ scoreDown , setScoreDown ] = useState(bad)
+
 
   useEffect(() => {
 		const fetchMovie = async () => {
@@ -24,12 +32,11 @@ const SingleMovie = (props) => {
   }, []);
 
     useEffect(() => {
-      window.localStorage.setItem('goodRating', scoreUp)
-    },[scoreUp]);
-
-    useEffect(() => {
-      window.localStorage.setItem('badRating', scoreDown)
-    },[scoreDown]);
+      localStorage.setItem(`${urlPath}`, JSON.stringify({
+        "goodRating": scoreUp,
+        "badRating": scoreDown
+      }))
+    })
 
     return (
     <div className="movie-container">
