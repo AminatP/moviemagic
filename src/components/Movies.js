@@ -18,7 +18,6 @@ const  Movies = () => {
 		const fetchMovies = async () => {
       setIsLoading(true)
 
-      console.log(searchValue)
       const url = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&query=${searchValue}`;
 
       const response = await axios.get(url);

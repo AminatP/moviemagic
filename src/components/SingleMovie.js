@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
 
-const SingleMovie = ({movie}) => {
-  console.log("movie prop", movie)
-  const [ singleMovie, setMovie ] = useState([])
+const SingleMovie = (movie) => {
+  console.log("coming from single!!!", movie.movie.title)
+  // console.log(this.props.location.movie)
+  // const id = movie.match.url
+  // console.log(id)
+  // const id = parseInt(().substring(1))
+
+  // const result = movie.filter(m => m.id === id);
+  // console.log("result", result)
 
   // useEffect(() => {
 	// 	const fetchMovie = async () => {

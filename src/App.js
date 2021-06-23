@@ -12,7 +12,7 @@ const App = () => {
       <Header />
       <Switch>
         <Route exact path="/" component={Movies} />
-        <Route exact path=":id" component={SingleMovie} />
+        <Route exact path="/:id" component={SingleMovie} />
       </Switch>
       <Footer />
     </BrowserRouter>
