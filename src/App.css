@@ -89,51 +89,69 @@ input[type='text'] {
 
 /*-----SINGLE MOVIE----- */
 .movie-container {
-  margin: 20px 20px 30px 50px;
+  margin: 70px 100px 70px 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid goldenrod 1px;
 }
 
 .movie-container img {
   float: left;
 }
 .movie-container .description {
-  margin: 60px 100px 100px 150px;
-  overflow:hidden;
+  margin: 0px 70px 100px 70px;
+  overflow: hidden;
+}
+.description h4{
+  color: rgb(228, 171, 26);
+  margin: 40px 0 0 250px;
 }
 
+
 .movie-container h1 {
-  font-size: 25px;
+  font-size: 35px;
   border-bottom: 1px #fff solid;
   padding-bottom: 10px;
   margin-bottom: 10px;
 }
 
 .movie-container li {
+  font-size: 18px;
   list-style: none;
   padding-bottom: 10px;
 }
 
 /*-----Rating MOVIE----- */
-
-.RatingTable {
-  margin: auto;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  text-align: center;
+.rating {
+  margin: 20px 0 0 300px;
 }
 
-.RatingTable > thead, tbody {
-  font-size: 1.6rem;
+.rating img {
+  height: 40px;
+  width: 40px;
+  background-color: rgb(1,59,115);
+  color: rgb(1,59,115);
+  outline: none;
+  padding: 1px 1px 1px 1px;
+  border: solid rgb(1,59,115) 0px;
+  border-radius: 5px;
+}
+
+.RatingTable {
+  color: #000;
+  font-size: 1rem;
 }
 
 .RatingTable th {
-  padding: 0.5rem 3rem;
-  width: 13rem;
+  padding: 0 0 0 40px;
+  width: 11px;
 }
 
 .RatingTable td {
-  background-color: rgb(77, 77, 77);
+  background-color: white;
   border-radius: 5px;
-  padding: 0.5rem 0rem;
+  padding: 0 0 0 15px;
 }
 
 /*-----------Footer--------------*/
@@ -146,8 +164,8 @@ input[type='text'] {
   position: fixed;
   bottom: 0;
   width: 100%;
-
 }
+
 .footer h4 {
   margin-top: 0.5rem;
   color: white;

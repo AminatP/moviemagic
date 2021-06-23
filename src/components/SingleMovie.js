@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { img_300, unavailable } from './imageConfig'
 import Rating from './Rating'
+import up from '../images/up.jpg'
+import down from '../images/down.jpg'
 import axios from 'axios'
 import '../App.css';
 
@@ -43,11 +45,14 @@ const SingleMovie = (props) => {
       <img src={movie.poster_path ? `${img_300}${movie.poster_path}` : unavailable}/>
       <div className="description">
         <h1>{movie.title}</h1>
-        <li>{movie.overview}</li>
         <li>{movie.release_date}</li>
+        <li>{movie.overview}</li>
+        <h4>What did you think about this movie?</h4>
+        <div className="rating">
           <Rating scoreUp={scoreUp} scoreDown={scoreDown}/>
-          <button onClick={() => setScoreUp(scoreUp + 1)}>Love it!</button>
-          <button onClick={() => setScoreDown(scoreDown + 1)}>Nah!</button>
+          <button onClick={() => setScoreUp(scoreUp + 1)}><img src={up} /></button>
+          <button onClick={() => setScoreDown(scoreDown + 1)}><img src={down} /></button>
+        </div>
       </div>
     </div>
   )

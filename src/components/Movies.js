@@ -35,7 +35,6 @@ const  Movies = () => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <input
             type='text'
-            className='form-control'
             placeholder='Search for a movie title...'
             {...register("message", {
               required: "Required",
