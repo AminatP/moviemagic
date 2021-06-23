@@ -2,8 +2,10 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div>
-      this is footer in the making
+    <div className="footer">
+      <h4>&copy;{new Date().getFullYear()}
+      <span> Movie Magic</span>. all rights reserved.
+      </h4>
     </div>
   )
 }

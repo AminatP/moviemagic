@@ -39,19 +39,33 @@ header img {
 /*-----SEARCH----- */
 .search {
   height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 input[type='text'] {
-  display: block;
+  display: inline-block;
   padding: 10px;
   font-size: 20px;
   border: 0;
   border-radius: 5px;
-  width: 60%;
+  width: 500px;
   margin: auto;
   outline: none;
 }
-
+.btn {
+  display: inline-block;
+  color: #fff;
+  background-color: rgb(1, 165, 1);
+  padding: 10px;
+  font-size: 20px;
+  border: 0;
+  border-radius: 5px;
+  width: 150px;
+  margin: auto;
+  outline: none;
+}
 /*-----MOVIES----- */
 
 .cards {
@@ -120,4 +134,24 @@ input[type='text'] {
   background-color: rgb(77, 77, 77);
   border-radius: 5px;
   padding: 0.5rem 0rem;
+}
+
+/*-----------Footer--------------*/
+.footer {
+  height: 4rem;
+  background: rgb(4, 4, 17);
+  text-align: center;
+  display: grid;
+  place-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+}
+.footer h4 {
+  margin-top: 0.5rem;
+  color: white;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 0.75rem;
 }

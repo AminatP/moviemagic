@@ -43,7 +43,9 @@ const  Movies = () => {
             autoFocus
           />
           <input
+            className="btn"
             type="submit"
+            value="Search!"
           />
         </form>
       </section>
