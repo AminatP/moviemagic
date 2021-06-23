@@ -1,5 +1,3 @@
-This project was bootstrapped with Create React App.
-
 ## Magic Movie
 
 Magic Movie is a small web application that allows a user to search for a movie title, click on that movie title for more information, and give that movie a thumbs up or thumbs down.
@@ -8,7 +6,7 @@ Magic Movie is a small web application that allows a user to search for a movie 
 ## Tech Stack
 
 JavaScript, React(React Hooks were used), HTML, CSS
-
+This project was bootstrapped with Create React App.
 ## Setup
 
 ```
